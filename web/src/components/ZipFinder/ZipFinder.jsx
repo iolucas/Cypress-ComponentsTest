@@ -4,6 +4,12 @@ import api from '../../services';
 
 import { BiSolidMap } from 'react-icons/bi'
 
+import Swal from 'sweetalert2'
+
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
+
 function ZipFinder() {
   const [cepInput, setCepInput] = useState('')
   const [cepOk, setCepOk] = useState(false)
@@ -24,7 +30,8 @@ function ZipFinder() {
     event.preventDefault();
 
     if (cepInput === '') {
-      alert('Preencha algum CEP')
+      // alert('Preencha algum CEP')
+      MySwal.fire(<p>Preencha algum CEP</p>)
       setLoading(false)
       return;
     }

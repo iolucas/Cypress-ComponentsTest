@@ -29,6 +29,8 @@ function ZipFinder() {
 
     event.preventDefault();
 
+    setNotice(null)
+
     if (cepInput === '') {
       // alert('Preencha algum CEP')
       MySwal.fire(<p>Preencha algum CEP</p>)
